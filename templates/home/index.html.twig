@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+    {% if is_granted('ROLE_PT') %}
+        je suis un patient | <a href="{{ path('app_logout') }}">Déconnexion</a>
+    {% elseif is_granted('ROLE_DR') %}
+        je suis un docteur | <a href="{{ path('app_logout') }}">Déconnexion</a>
+    {% endif %}
+{% endblock %}
